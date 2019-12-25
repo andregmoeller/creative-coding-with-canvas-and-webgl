@@ -7,7 +7,16 @@ This is a repository I created to accompany my viewing of [Creative Coding with 
 
 ## Installation Instructions
 
-1. `cd genart`
+### 2D
+
+1. `cd 2d`
+1. `npm install`
+1. `canvas-sketch sketch.js`
+1. Open http://10.106.1.108:9966/
+
+### 3D (WebGL)
+
+1. `cd webgl`
 1. `npm install`
 1. `canvas-sketch sketch.js`
 1. Open http://10.106.1.108:9966/
