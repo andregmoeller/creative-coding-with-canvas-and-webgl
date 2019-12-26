@@ -33,6 +33,7 @@ const frag = glsl(`
 const sketch = ({ gl }) => {
   // Create the shader and return it
   return createShader({
+    clearColor: 'white',
     // Pass along WebGL context
     gl,
     // Specify fragment and/or vertex shader strings
