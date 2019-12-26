@@ -1,3 +1,5 @@
+const random = require('canvas-sketch-util/random');
+
 // Ensure ThreeJS is in global scope for the 'examples/'
 global.THREE = require("three");
 
@@ -30,17 +32,20 @@ const sketch = ({ context }) => {
   // Setup your scene
   const scene = new THREE.Scene();
 
-  // Setup a geometry
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-
-  // Setup a material
-  const material = new THREE.MeshBasicMaterial({
-    color: 'red'
-  });
-
-  // Setup a mesh with geometry + material
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
+  const box = new THREE.BoxGeometry(1, 1, 1);
+  for (let i = 0; i < 10; i++) {
+    const material = new THREE.MeshBasicMaterial({
+      color: 'red'
+    });
+    const mesh = new THREE.Mesh(box, material);
+    mesh.position.set(
+      random.range(-1, 1),
+      random.range(-1, 1),
+      random.range(-1, 1)
+    );
+    mesh.scale.multiplyScalar(0.1);
+    scene.add(mesh);
+  }
 
   // draw each frame
   return {
@@ -52,7 +57,7 @@ const sketch = ({ context }) => {
       const aspect = viewportWidth / viewportHeight;
 
       // Ortho zoom
-      const zoom = 1.0;
+      const zoom = 2.0;
 
       // Bounds
       camera.left = -zoom * aspect;
