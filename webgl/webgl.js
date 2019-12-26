@@ -1,5 +1,6 @@
 const random = require('canvas-sketch-util/random');
 const palettes = require('nice-color-palettes');
+const eases = require('eases');
 
 // Ensure ThreeJS is in global scope for the 'examples/'
 global.THREE = require("three");
@@ -94,7 +95,8 @@ const sketch = ({ context }) => {
     },
     // Update & render your scene here
     render({ playhead }) {
-      scene.rotation.z = Math.sin(playhead * Math.PI * 1.5) * 2;
+      const t = Math.sin(playhead * Math.PI);
+      scene.rotation.z = eases.expoInOut(t);
       renderer.render(scene, camera);
     },
     // Dispose of events & renderer for cleaner hot-reloading
