@@ -13,8 +13,14 @@ This is a repository I created to accompany my viewing of [Creative Coding with 
 1. `canvas-sketch sketch.js`
 1. Open http://10.106.1.108:9966/
 
-### 3D (WebGL)
+### 3D (ThreeJS)
 
-1. `cd webgl`
+1. `cd 3d`
 1. `canvas-sketch webgl.js`
+1. Open http://10.106.1.108:9966/
+
+### Shader
+
+1. `cd shader`
+1. `canvas-sketch shader.js`
 1. Open http://10.106.1.108:9966/
