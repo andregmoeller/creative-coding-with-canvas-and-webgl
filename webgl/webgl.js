@@ -94,7 +94,7 @@ const sketch = ({ context }) => {
     },
     // Update & render your scene here
     render({ playhead }) {
-      scene.rotation.z = playhead * Math.PI * 2;
+      scene.rotation.z = Math.sin(playhead * Math.PI * 1.5) * 2;
       renderer.render(scene, camera);
     },
     // Dispose of events & renderer for cleaner hot-reloading
